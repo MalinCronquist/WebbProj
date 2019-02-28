@@ -1,2 +1,3 @@
-*
-!edaf90-proj/src/*
+edaf90-proj/*
+!edaf90-proj/src
+!.gitignore
