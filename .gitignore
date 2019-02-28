@@ -1,3 +1,4 @@
 edaf90-proj/*
+node_modules/*
 !edaf90-proj/src
 !.gitignore
