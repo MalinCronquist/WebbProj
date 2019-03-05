@@ -6,7 +6,6 @@ import { FooterComponent } from './footer/footer.component';
 import { RouterModule, Routes } from '@angular/router';
 import { WeatherComponent } from './weather/weather.component';
 import { FilmComponent } from './film/film.component';
-import { HomeComponent } from './home/home.component';
 import { Home2Component } from './home2/home2.component';
 
 
