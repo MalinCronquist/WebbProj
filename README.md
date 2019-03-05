@@ -1,7 +1,7 @@
 # WebbProj
 
 jquery
-install jquery --save
+npm install jquery --save
 
 Crypto
 npm i angular-crypto-js
