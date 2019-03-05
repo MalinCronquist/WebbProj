@@ -8,21 +8,14 @@ import {FilmService} from '../../film.service'
 })
 export class FilmComponent implements OnInit {
 
-  test: string = '';
+  title: string = '';
 
   constructor(private filmService: FilmService) { }
 
   ngOnInit() {
-    this.filmService
-    .getFilmData('url')
-    .subscribe(
-      data => {
-        this.test = data['Title']
-      },
-      err => {
-        console.log(err);
-      }
-    );
+    const testKey: string = 'tt0137523';
+    this.filmService.getFilmData(testKey)
+      .subscribe(data => {this.title = data['Title']});
   }
 
 }
