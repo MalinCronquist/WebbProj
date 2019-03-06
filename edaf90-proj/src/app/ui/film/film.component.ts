@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FilmService} from '../../film.service'
+import {FilmService} from '../../film.service';
+import imdbKeys from '../../../assets/imdb_key_lists/imdb_keys_top_1-250.json';
 
 @Component({
   selector: 'app-film',
@@ -8,14 +9,17 @@ import {FilmService} from '../../film.service'
 })
 export class FilmComponent implements OnInit {
 
-  title: string = '';
+  data: {};
 
   constructor(private filmService: FilmService) { }
 
   ngOnInit() {
-    const testKey: string = 'tt0137523';
+    var randInt = Math.floor((Math.random() * 250));
+    const testKey: string = imdbKeys[randInt];
     this.filmService.getFilmData(testKey)
-      .subscribe(data => {this.title = data['Title']});
+      .subscribe(data => {this.data = data;
+          console.log(data);
+        });
   }
 
 }
