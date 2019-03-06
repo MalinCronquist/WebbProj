@@ -3,6 +3,7 @@ import * as CryptoJS from 'crypto-js';
 import {WeatherService} from '../../weather.service';
 import {FormControl} from '@angular/forms';
 import { ConsoleReporter } from 'jasmine';
+import {Router} from '@angular/router';
 
 declare var $:any;
 
@@ -18,7 +19,7 @@ test: string = 'KalleANks';
 locations: [];
 locationName: [''];
 
-  constructor(private weatherService: WeatherService) {}
+  constructor(private weatherService: WeatherService, private router: Router) {}
 
   ngOnInit() {
     this.weatherService.getWeatherData()
@@ -32,7 +33,11 @@ locationName: [''];
 
   updateCity(value){
     console.log(value.toLowerCase());
-     console.log((this.locationName.includes(value.toLowerCase())));
+     if (this.locationName.includes(value.toLowerCase()))
+        this.router.navigate(['/film', {city: value.toLowerCase()}]);
+     else
+        alert('Your city lacks police station (or does not exist), please try another')
+
   }
 
 
