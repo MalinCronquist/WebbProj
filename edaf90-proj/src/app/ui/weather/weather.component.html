@@ -1,14 +1,14 @@
 
 
 <div class="jumbotron">
-  <h1 class="display-4">City </h1>
-  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <h1 class="display-4"> Choose your City </h1>
+  <p class="lead">Welcome! this is a smart movie sugestion generator</p>
   <input type="text" [formControl]="name" class="form-control">
   <p>
-    <button class="btn btn-primary" (click)="updateCity(name.value)">Update Name</button>
+    <button class="btn btn-light" (click)="updateCity(name.value)">Generate</button>
   </p>
   
   <hr class="my-4">
-  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p>Enter the city where you live to get suggestions for movies that suits your location.</p>
  
 </div>
