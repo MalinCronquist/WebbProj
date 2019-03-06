@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import * as CryptoJS from 'crypto-js';
 import {WeatherService} from '../../weather.service';
 import {FormControl} from '@angular/forms';
-import { ConsoleReporter } from 'jasmine';
 
 declare var $:any;
 
