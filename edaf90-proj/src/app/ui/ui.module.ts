@@ -7,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WeatherComponent } from './weather/weather.component';
 import { FilmComponent } from './film/film.component';
 import { Home2Component } from './home2/home2.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   imports: [
+    ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(
       appRoutes,
