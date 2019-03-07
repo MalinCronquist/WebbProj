@@ -12,7 +12,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: 'home', component: Home2Component },
-  { path: 'weather', component: WeatherComponent },
+  { path: 'city', component: WeatherComponent },
   { path: 'film', component: FilmComponent }
 ];
 
