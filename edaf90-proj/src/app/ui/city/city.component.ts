@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {WeatherService} from '../../weather.service';
+import {CityService} from '../../city.service';
 import {FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
 
@@ -7,18 +7,18 @@ declare var $:any;
 
 @Component({
   selector: 'app-weather',
-  templateUrl: './weather.component.html',
-  styleUrls: ['./weather.component.css']
+  templateUrl: './city.component.html',
+  styleUrls: ['./city.component.css']
 })
-export class WeatherComponent implements OnInit {
+export class CityComponent implements OnInit {
 
 name = new FormControl('');
 locationName: [''];
 
-  constructor(private weatherService: WeatherService, private router: Router) {}
+  constructor(private weatherService: CityService, private router: Router) {}
 
   ngOnInit() {
-    this.weatherService.getWeatherData()
+    this.weatherService.getCityData()
     .subscribe(data => {this.locationName = data.map(element => element.name.toLowerCase());});
   }
 
