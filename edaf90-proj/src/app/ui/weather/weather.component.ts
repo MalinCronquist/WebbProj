@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as CryptoJS from 'crypto-js';
 import {WeatherService} from '../../weather.service';
 import {FormControl} from '@angular/forms';
 import {Router} from '@angular/router';
@@ -14,24 +13,16 @@ declare var $:any;
 export class WeatherComponent implements OnInit {
 
 name = new FormControl('');
-test: string = 'KalleANks';
-locations: [];
 locationName: [''];
 
   constructor(private weatherService: WeatherService, private router: Router) {}
 
   ngOnInit() {
     this.weatherService.getWeatherData()
-    .subscribe(data => {(this.locations = data), this.locationName = data.map(element => element.name.toLowerCase());});
-  }
-
-  saveLocationNames(info){
-    console.log("hej");
-    console.log(info);
+    .subscribe(data => {this.locationName = data.map(element => element.name.toLowerCase());});
   }
 
   updateCity(value){
-    console.log(value.toLowerCase());
      if (this.locationName.includes(value.toLowerCase()))
         this.router.navigate(['/film', {city: value.toLowerCase()}]);
      else
