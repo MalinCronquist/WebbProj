@@ -21,8 +21,7 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     CommonModule,
     RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true }
+      appRoutes
     )
   ],
   declarations: [LayoutComponent, HeaderComponent, FooterComponent, WeatherComponent, FilmComponent, Home2Component],
