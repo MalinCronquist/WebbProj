@@ -24,7 +24,7 @@ locationName: [''];
 
   updateCity(value){
      if (this.locationName.includes(value.toLowerCase()))
-        this.router.navigate(['/film', {city: value.toLowerCase()}]);
+        this.router.navigate(['/film'],  { queryParams: { city: value } });
      else
         alert('Your city lacks police station (or does not exist), please try another')
 

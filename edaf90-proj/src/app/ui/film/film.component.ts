@@ -11,7 +11,7 @@ import imdbKeys from '../../../assets/imdb_key_lists/imdb_keys_top_1-250.json';
 
 export class FilmComponent implements OnInit {
 
-  data: {};
+  data: {} = {};
   city: string = '';
 
   constructor(
@@ -23,7 +23,6 @@ export class FilmComponent implements OnInit {
       this.route
         .queryParams
         .subscribe(params => {
-          // Defaults to 0 if no query param provided.
           this.city = params['city'] || 'No city specified';
           console.log('City: ' + this.city.toString())
         });
