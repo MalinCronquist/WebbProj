@@ -6,20 +6,23 @@ import {Router} from '@angular/router';
 declare var $:any;
 
 @Component({
-  selector: 'app-weather',
+  selector: 'app-city',
   templateUrl: './city.component.html',
   styleUrls: ['./city.component.css']
 })
 export class CityComponent implements OnInit {
 
-name = new FormControl('');
-locationName: [''];
+defaultCity: string = 'Lund';
+name: FormControl;
+locationName: string[];
 
-  constructor(private weatherService: CityService, private router: Router) {}
+  constructor(private cityService: CityService, private router: Router) {}
 
   ngOnInit() {
-    this.weatherService.getCityData()
-    .subscribe(data => {this.locationName = data.map(element => element.name.toLowerCase());});
+    this.name = new FormControl(this.defaultCity);
+    this.locationName = [this.defaultCity];
+    this.cityService.getCityData()
+    .subscribe(data => {this.locationName = data.map(element => element.name.toLowerCase()) || [this.defaultCity];});
   }
 
   updateCity(value){

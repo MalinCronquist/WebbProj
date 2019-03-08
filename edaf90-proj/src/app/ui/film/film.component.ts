@@ -27,12 +27,17 @@ export class FilmComponent implements OnInit {
           console.log('City: ' + this.city.toString())
         });
 
+      this.getRandomMovie();
+
+  }
+
+  getRandomMovie() {
     var randInt = Math.floor((Math.random() * 250));
     const testKey: string = imdbKeys[randInt];
     this.filmService.getFilmData(testKey)
       .subscribe(data => {this.data = data;
           console.log(data);
-        });
+    });
   }
 
 }
