@@ -27,3 +27,8 @@ ng serve
 access the application locally at:
 
 localhost:4200
+
+
+## Report
+
+The report is found in the root of the repo and is named EDAF90_Projektrapport.pdf
