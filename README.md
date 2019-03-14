@@ -23,3 +23,7 @@ npm i angular-crypto-js
 ## Running the Server
 
 ng serve
+
+access the application locally at:
+
+localhost:4200
